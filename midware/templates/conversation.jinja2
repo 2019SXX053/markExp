@@ -1,0 +1,23 @@
+<DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>conversation - markExp</title>
+    </head>
+
+    <body>
+        <h1>markExp</h1>
+        <h2>conversation</h2>
+
+        <p>
+            {% for msg in conversation %}
+                <p> {{ msg }} </p>
+            {% endfor %}
+        </p>
+
+        <form action="/input" method="POST">
+            <input type="text" id="message" name="message">
+        </form>
+    </body>
+</html>
