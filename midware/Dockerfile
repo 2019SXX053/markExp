@@ -10,5 +10,6 @@ WORKDIR /midware
 RUN pip install -r /midware/requirements.txt
 
 COPY expapp.py /midware/
+ADD templates /midware/templates
 
 CMD ./start.sh

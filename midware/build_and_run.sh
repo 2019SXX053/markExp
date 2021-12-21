@@ -8,7 +8,7 @@ docker build -t ${IMAGE} .
 docker container stop ${CONTAINER}
 docker container rm ${CONTAINER}
 
-docker run -t --name ${CONTAINER} -p 15000:5000 -d ${IMAGE}
+docker run -t --name ${CONTAINER} -p 5000:5000 -d ${IMAGE}
 docker exec -ti ${CONTAINER} /bin/bash
 
 
