@@ -28,6 +28,7 @@ docker run \
    --env MARIADB_USER=${MY_MARIADB_USER} \
    --env MARIADB_PASSWORD=${MY_MARIADB_PASSWORD} \
    --env MARIADB_ROOT_PASSWORD=${MY_MARIADB_ROOT_PASSWORD} \
+   --network velcom-network \
    -p 3306:3306  \
    mariadb:latest
 

@@ -3,7 +3,9 @@ from flask import render_template
 from flask import request
 
 import pymysql
+import os
 
+CONTAINER = "markexp-mariadb"
 
 MY_MARIADB_USER = "markexp"
 MY_MARIADB_PASSWORD = "laksdjfienilakdjlkajdsfaljeilie"
@@ -13,6 +15,11 @@ MY_PORT = "3306"
 
 MY_DB_NAME = "markexp"
 MY_DB_TABLE_NAME = "conversation"
+
+# 从环境变量当中读取 `MY_HOST`, 如果存在这个环境变量，那么就覆盖本地的 `MY_HOST`
+my_host_hame = os.getenv('MY_HOST')
+if my_host_hame:
+    MY_HOST = my_host_hame
 
 message_list = []
 
