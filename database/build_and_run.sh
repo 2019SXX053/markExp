@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo apt install -y mysql-client
+
 IMAGE="markexp-mariadb"
 CONTAINER="markexp-mariadb"
 

@@ -2,6 +2,17 @@ from flask import Flask
 from flask import render_template
 from flask import request
 
+message_list = []
+
+
+def process_input(msg):
+    message_list.append(msg)
+    pass
+
+
+def get_output():
+    return message_list
+
 
 app = Flask(__name__)
 
@@ -10,8 +21,9 @@ app = Flask(__name__)
 def index():
     return render_template('conversation.jinja2')
 
+
 @app.route("/input", methods=['GET', 'PoSt'])
-def input_and_show():
+def input():
 
     msg = request.form['message']
 
@@ -19,16 +31,6 @@ def input_and_show():
     conversation = get_output()
 
     return render_template('conversation.jinja2', conversation=conversation)
-
-
-message_list = []
-
-def process_input(msg):
-    message_list.append(msg)
-    pass
-
-def get_output():
-    return message_list
 
 
 if __name__ == '__main__':
