@@ -1,5 +1,7 @@
 FROM python:3
 
+RUN apt-get update && apt-get install -y default-mysql-client-core iputils-ping net-tools vim
+
 RUN mkdir /midware
 
 COPY requirements.txt /midware/
