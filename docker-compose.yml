@@ -1,0 +1,20 @@
+version: "3.7"
+
+services:
+  velcom-database:
+    image: mariadb:latest
+    ports:
+      - 3306:3306
+    environment:
+      - MARIADB_USER=velcom
+      - MARIADB_PASSWORD=velcom_alksdjflkakjei
+      - MARIADB_ROOT_PASSWORD=velcom_rootlkdjalienfklae
+      - MYSQL_DATABASE=velcom
+
+  velcom-midware:
+    build: midware/
+    ports:
+      - 5000:5000
+    environment:
+      - MY_HOST=velcom-database
+    command: /midware/start.sh
